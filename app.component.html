@@ -1,0 +1,106 @@
+<div class="card">
+	<div class="card-header">
+		<!-- <h5>User Registration</h5> -->
+		<div class="card-body">
+			<ng-template #content let-modal>
+				<div class="modal-header">
+					<h4 class="adduser">Add New Employee</h4>
+					<button type="button" class="btn-close" aria-label="Close"
+						(click)="modal.dismiss('Cross click')"></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="form-group col-6">
+								<label>SNO</label>
+								<input type="number" class="form-control" formControlName="SNO"
+								placeholder="Enter SNO" />
+							</div>
+							<div class="form-group col-6">
+								<label> Name</label>
+								<input type="text" class="form-control" formControlName="Name"
+									placeholder="Enter Name" />
+							</div>
+							<div class="form-group col-6">
+								<label>Department</label>
+								<input type="text" class="form-control" formControlName="Department"
+									placeholder="Enter Department" />
+							</div>
+							<div class="form-group col-6">
+								<label>Gender</label>
+								<br/>
+								<input type="checkbox" value="male" name="gender" ngModel> Male
+								<input type="checkbox" value="female" name="gender" ngModel> Female
+							</div>
+							<div class="form-group col-6">
+								<label>Arived On</label>
+								<input type="date" class="form-control" formControlName="ArivedOn"
+									placeholder="Arived On" />
+							</div>
+							<div class="form-group col-6">
+								<label>Start Time</label>
+								<input type="email" class="form-control" formControlName="StartTime"
+									placeholder="Enter Start Time" />
+
+							</div>
+							<div class="form-group col-6">
+								<label>End Time</label>
+								<input type="email" class="form-control" formControlName="EndTime"
+									placeholder="End Time" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group clo  text-center">
+								<button type="submit" class="btn btn-primary me-3">Save</button>
+								<button type="button" class="btn btn-danger">Cancel</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+				</div>
+			</ng-template>
+			<div style="text-align: right;">
+				<button class="btn btn-outline-primary mb-2 me-2" (click)="openLg(content)">Add New User</button>
+			</div><br /><br /><br />
+			<h5 class="model-title">User List</h5>
+			<div class="form-row">
+				<div class="form-group-clo">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>SNO</th>
+								<th>Name</th>
+								<th>Department</th>
+								<th>Gender</th>
+								<th>Arrieved On</th>
+								<th>Start Time</th>
+								<th>End Time</th>
+								<th>Actions</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>1</th>
+								<th>Raj kumar Jadi</th>
+								<th>Software Engineer</th>
+								<th>Male</th>
+								<th>2</th>
+								<th>10</th>
+								<th>2</th>
+								<td>
+									<i class="fa fa-edit me-2" style="color: rgb(45, 45, 219);" (click)="edit(1)"></i>
+									<i class="fa fa-trash" style="color: rgb(240, 51, 51);" (click)="delete(1)"></i>
+								</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
